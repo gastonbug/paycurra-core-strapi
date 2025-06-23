@@ -15,5 +15,5 @@ steps:
     #git remote add github https://$(PYC.Strapi.GitHubToken)@github.com/gastonbug/paycurra-core-strapi.git
     git remote add github https://gastonbug:$(PYC.Strapi.GitHubToken)@github.com/gastonbug/paycurra-core-strapi.git
     #git remote -v
-    git push github origin/master --force
+    git push github
   displayName: 'Push to GitHub for Strapi Cloud'
