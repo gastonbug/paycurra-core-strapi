@@ -10,7 +10,6 @@ variables:
 steps:
 - checkout: self
 - script: |
-    
     git clone https://pyc-strapi-cicd:$(PYC.Strapi.AzureGitToken)@dev.azure.com/Paycurra-HQ/paycurra/_git/paycurra-core-strapi
     cd paycurra-core-strapi
     git remote add github https://gastonbug:$(PYC.Strapi.GitHubToken)@github.com/gastonbug/paycurra-core-strapi.git
