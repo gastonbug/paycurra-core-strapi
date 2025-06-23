@@ -10,6 +10,7 @@ variables:
 steps:
 - checkout: self
 - script: |
+    git config --global credential.helper manager-core
     git clone https://Paycurra-HQ@dev.azure.com/Paycurra-HQ/paycurra/_git/paycurra-core-strapi
     cd paycurra-core-strapi
     git remote add github https://gastonbug:$(PYC.Strapi.GitHubToken)@github.com/gastonbug/paycurra-core-strapi.git
