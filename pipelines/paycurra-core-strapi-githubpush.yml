@@ -10,10 +10,10 @@ variables:
 steps:
 - checkout: self
 - script: |
-    git config --global user.email "oluseyi.adedokun@paycurra.com"
-    git config --global user.name "gastonbug"
+    #git config --global user.email "oluseyi.adedokun@paycurra.com"
+    #git config --global user.name "gastonbug"
     #git remote add github https://$(PYC.Strapi.GitHubToken)@github.com/gastonbug/paycurra-core-strapi.git
     git remote add github https://gastonbug:$(PYC.Strapi.GitHubToken)@github.com/gastonbug/paycurra-core-strapi.git
     #git remote -v
-    git push github master --force
+    git push github main --force
   displayName: 'Push to GitHub for Strapi Cloud'
