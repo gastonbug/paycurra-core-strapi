@@ -7,8 +7,8 @@ pool:
 steps:
 - checkout: self
 - script: |
-    git config --global user.email "ci@yourdomain.com"
-    git config --global user.name "CI Bot"
+    git config --global user.email "oluseyi.adedokun@paycurra.com"
+    git config --global user.name "gastonbug"
     git remote add github https://<github_token>@github.com/your-org/your-strapi-repo.git
     git push github main --force
   displayName: 'Push to GitHub for Strapi Cloud'
