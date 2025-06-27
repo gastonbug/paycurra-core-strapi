@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_shared_hero_banners",
+  "info": {
+    "displayName": "heroBanner"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "SubTitle": {
+      "type": "string"
+    },
+    "BackgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "CtaText": {
+      "type": "string"
+    },
+    "CtaUrl": {
+      "type": "string"
+    },
+    "TextColor": {
+      "type": "string"
+    },
+    "OverlayColor": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

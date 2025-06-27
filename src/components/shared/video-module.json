@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_shared_video_modules",
+  "info": {
+    "displayName": "videoModule"
+  },
+  "options": {},
+  "attributes": {
+    "Video": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Caption": {
+      "type": "string"
+    },
+    "OverlayText": {
+      "type": "string"
+    },
+    "CtaUrl": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
