@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_shared_event_banners",
+  "info": {
+    "displayName": "eventBanner"
+  },
+  "options": {},
+  "attributes": {
+    "eventName": {
+      "type": "string"
+    },
+    "eventImage": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "startDate": {
+      "type": "datetime"
+    },
+    "endDate": {
+      "type": "datetime"
+    },
+    "ctaUrl": {
+      "type": "string"
+    },
+    "badgeColor": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

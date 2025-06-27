@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_shared_promo_banners",
+  "info": {
+    "displayName": "promoBanner"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "productImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "productLink": {
+      "type": "string"
+    },
+    "discountLabel": {
+      "type": "string"
+    },
+    "backgroundColor": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
