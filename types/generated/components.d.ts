@@ -3,36 +3,36 @@ import type { Schema, Struct } from '@strapi/strapi';
 export interface SharedEventBanner extends Struct.ComponentSchema {
   collectionName: 'components_shared_event_banners';
   info: {
-    displayName: 'eventBanner';
+    displayName: 'EventBanner';
   };
   attributes: {
-    badgeColor: Schema.Attribute.String;
-    ctaUrl: Schema.Attribute.String;
-    endDate: Schema.Attribute.DateTime;
-    eventImage: Schema.Attribute.Media<
+    BadgeColor: Schema.Attribute.String;
+    CtaUrl: Schema.Attribute.String;
+    EndDate: Schema.Attribute.DateTime;
+    EventImage: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
-    eventName: Schema.Attribute.String;
-    startDate: Schema.Attribute.DateTime;
+    EventName: Schema.Attribute.String;
+    StartDate: Schema.Attribute.DateTime;
   };
 }
 
 export interface SharedHeroBanner extends Struct.ComponentSchema {
   collectionName: 'components_shared_hero_banners';
   info: {
-    displayName: 'heroBanner';
+    displayName: 'HeroBanner';
   };
   attributes: {
-    backgroundImage: Schema.Attribute.Media<
+    BackgroundImage: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
-    ctaText: Schema.Attribute.String;
-    ctaUrl: Schema.Attribute.String;
-    overlayColor: Schema.Attribute.String;
-    subTitle: Schema.Attribute.String;
-    textColor: Schema.Attribute.String;
-    title: Schema.Attribute.String;
+    CtaText: Schema.Attribute.String;
+    CtaUrl: Schema.Attribute.String;
+    OverlayColor: Schema.Attribute.String;
+    SubTitle: Schema.Attribute.String;
+    TextColor: Schema.Attribute.String;
+    Title: Schema.Attribute.String;
   };
 }
 
@@ -50,17 +50,17 @@ export interface SharedMedia extends Struct.ComponentSchema {
 export interface SharedPromoBanner extends Struct.ComponentSchema {
   collectionName: 'components_shared_promo_banners';
   info: {
-    displayName: 'promoBanner';
+    displayName: 'PromoBanner';
   };
   attributes: {
-    backgroundColor: Schema.Attribute.String;
-    description: Schema.Attribute.Text;
-    discountLabel: Schema.Attribute.String;
-    productImage: Schema.Attribute.Media<
+    BackgroundColor: Schema.Attribute.String;
+    Description: Schema.Attribute.Text;
+    DiscountLabel: Schema.Attribute.String;
+    ProductImage: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
-    productLink: Schema.Attribute.String;
-    title: Schema.Attribute.String;
+    ProductLink: Schema.Attribute.String;
+    Title: Schema.Attribute.String;
   };
 }
 
@@ -118,13 +118,13 @@ export interface SharedSlider extends Struct.ComponentSchema {
 export interface SharedVideoModule extends Struct.ComponentSchema {
   collectionName: 'components_shared_video_modules';
   info: {
-    displayName: 'videoModule';
+    displayName: 'VideoModule';
   };
   attributes: {
-    caption: Schema.Attribute.String;
-    ctaUrl: Schema.Attribute.String;
-    overlayText: Schema.Attribute.String;
-    video: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Caption: Schema.Attribute.String;
+    CtaUrl: Schema.Attribute.String;
+    OverlayText: Schema.Attribute.String;
+    Video: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 

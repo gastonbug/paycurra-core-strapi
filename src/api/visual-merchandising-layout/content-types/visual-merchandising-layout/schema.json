@@ -11,13 +11,13 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "customerUniqueReferenceNumber": {
+    "CustomerUniqueReferenceNumber": {
       "type": "string"
     },
-    "title": {
+    "Title": {
       "type": "string"
     },
-    "sections": {
+    "Sections": {
       "type": "dynamiczone",
       "components": [
         "shared.hero-banner",

@@ -5,10 +5,10 @@
   },
   "options": {},
   "attributes": {
-    "eventName": {
+    "EventName": {
       "type": "string"
     },
-    "eventImage": {
+    "EventImage": {
       "type": "media",
       "multiple": true,
       "allowedTypes": [
@@ -18,16 +18,16 @@
         "audios"
       ]
     },
-    "startDate": {
+    "StartDate": {
       "type": "datetime"
     },
-    "endDate": {
+    "EndDate": {
       "type": "datetime"
     },
-    "ctaUrl": {
+    "CtaUrl": {
       "type": "string"
     },
-    "badgeColor": {
+    "BadgeColor": {
       "type": "string"
     }
   },

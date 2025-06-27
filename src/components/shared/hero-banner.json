@@ -5,13 +5,13 @@
   },
   "options": {},
   "attributes": {
-    "title": {
+    "Title": {
       "type": "string"
     },
-    "subTitle": {
+    "SubTitle": {
       "type": "string"
     },
-    "backgroundImage": {
+    "BackgroundImage": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [
@@ -21,16 +21,16 @@
         "audios"
       ]
     },
-    "ctaText": {
+    "CtaText": {
       "type": "string"
     },
-    "ctaUrl": {
+    "CtaUrl": {
       "type": "string"
     },
-    "textColor": {
+    "TextColor": {
       "type": "string"
     },
-    "overlayColor": {
+    "OverlayColor": {
       "type": "string"
     }
   },

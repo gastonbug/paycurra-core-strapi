@@ -553,7 +553,7 @@ export interface ApiVisualMerchandisingLayoutVisualMerchandisingLayout
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    customerUniqueReferenceNumber: Schema.Attribute.String;
+    CustomerUniqueReferenceNumber: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -561,7 +561,7 @@ export interface ApiVisualMerchandisingLayoutVisualMerchandisingLayout
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    sections: Schema.Attribute.DynamicZone<
+    Sections: Schema.Attribute.DynamicZone<
       [
         'shared.hero-banner',
         'shared.event-banner',
@@ -569,7 +569,7 @@ export interface ApiVisualMerchandisingLayoutVisualMerchandisingLayout
         'shared.video-module',
       ]
     >;
-    title: Schema.Attribute.String;
+    Title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

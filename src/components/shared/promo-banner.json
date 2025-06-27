@@ -5,13 +5,13 @@
   },
   "options": {},
   "attributes": {
-    "title": {
+    "Title": {
       "type": "string"
     },
-    "description": {
+    "Description": {
       "type": "text"
     },
-    "productImage": {
+    "ProductImage": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [
@@ -21,13 +21,13 @@
         "audios"
       ]
     },
-    "productLink": {
+    "ProductLink": {
       "type": "string"
     },
-    "discountLabel": {
+    "DiscountLabel": {
       "type": "string"
     },
-    "backgroundColor": {
+    "BackgroundColor": {
       "type": "string"
     }
   },
