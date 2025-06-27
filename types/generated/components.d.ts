@@ -3,7 +3,7 @@ import type { Schema, Struct } from '@strapi/strapi';
 export interface SharedEventBanner extends Struct.ComponentSchema {
   collectionName: 'components_shared_event_banners';
   info: {
-    displayName: 'EventBanner';
+    displayName: 'eventBanner';
   };
   attributes: {
     BadgeColor: Schema.Attribute.String;
@@ -21,7 +21,7 @@ export interface SharedEventBanner extends Struct.ComponentSchema {
 export interface SharedHeroBanner extends Struct.ComponentSchema {
   collectionName: 'components_shared_hero_banners';
   info: {
-    displayName: 'HeroBanner';
+    displayName: 'heroBanner';
   };
   attributes: {
     BackgroundImage: Schema.Attribute.Media<
@@ -47,10 +47,23 @@ export interface SharedMedia extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedMenuItem extends Struct.ComponentSchema {
+  collectionName: 'components_shared_menu_items';
+  info: {
+    displayName: 'MenuItem';
+  };
+  attributes: {
+    Label: Schema.Attribute.String;
+    Order: Schema.Attribute.Integer;
+    SubMenuItems: Schema.Attribute.Component<'shared.sub-menu-item', true>;
+    URL: Schema.Attribute.Text;
+  };
+}
+
 export interface SharedPromoBanner extends Struct.ComponentSchema {
   collectionName: 'components_shared_promo_banners';
   info: {
-    displayName: 'PromoBanner';
+    displayName: 'promoBanner';
   };
   attributes: {
     BackgroundColor: Schema.Attribute.String;
@@ -115,10 +128,21 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedSubMenuItem extends Struct.ComponentSchema {
+  collectionName: 'components_shared_sub_menu_items';
+  info: {
+    displayName: 'SubMenuItem';
+  };
+  attributes: {
+    Label: Schema.Attribute.String;
+    URL: Schema.Attribute.Text;
+  };
+}
+
 export interface SharedVideoModule extends Struct.ComponentSchema {
   collectionName: 'components_shared_video_modules';
   info: {
-    displayName: 'VideoModule';
+    displayName: 'videoModule';
   };
   attributes: {
     Caption: Schema.Attribute.String;
@@ -134,11 +158,13 @@ declare module '@strapi/strapi' {
       'shared.event-banner': SharedEventBanner;
       'shared.hero-banner': SharedHeroBanner;
       'shared.media': SharedMedia;
+      'shared.menu-item': SharedMenuItem;
       'shared.promo-banner': SharedPromoBanner;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'shared.sub-menu-item': SharedSubMenuItem;
       'shared.video-module': SharedVideoModule;
     }
   }

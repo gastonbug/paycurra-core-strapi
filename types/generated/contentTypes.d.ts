@@ -538,6 +538,38 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiPycMenuBarPycMenuBar extends Struct.CollectionTypeSchema {
+  collectionName: 'pyc_menu_bars';
+  info: {
+    displayName: 'PYC Menu bar';
+    pluralName: 'pyc-menu-bars';
+    singularName: 'pyc-menu-bar';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    BackgroundColor: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    CustomerUniqueReferenceNumber: Schema.Attribute.UID;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::pyc-menu-bar.pyc-menu-bar'
+    > &
+      Schema.Attribute.Private;
+    Logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    MenuItems: Schema.Attribute.Component<'shared.menu-item', true>;
+    publishedAt: Schema.Attribute.DateTime;
+    ShowSearchBar: Schema.Attribute.Boolean;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiVisualMerchandisingLayoutVisualMerchandisingLayout
   extends Struct.CollectionTypeSchema {
   collectionName: 'visual_merchandising_layouts';
@@ -1090,6 +1122,7 @@ declare module '@strapi/strapi' {
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
       'api::global.global': ApiGlobalGlobal;
+      'api::pyc-menu-bar.pyc-menu-bar': ApiPycMenuBarPycMenuBar;
       'api::visual-merchandising-layout.visual-merchandising-layout': ApiVisualMerchandisingLayoutVisualMerchandisingLayout;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
