@@ -1,5 +1,41 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface SharedEventBanner extends Struct.ComponentSchema {
+  collectionName: 'components_shared_event_banners';
+  info: {
+    displayName: 'eventBanner';
+  };
+  attributes: {
+    BadgeColor: Schema.Attribute.String;
+    CtaUrl: Schema.Attribute.String;
+    EndDate: Schema.Attribute.DateTime;
+    EventImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    EventName: Schema.Attribute.String;
+    StartDate: Schema.Attribute.DateTime;
+  };
+}
+
+export interface SharedHeroBanner extends Struct.ComponentSchema {
+  collectionName: 'components_shared_hero_banners';
+  info: {
+    displayName: 'heroBanner';
+  };
+  attributes: {
+    BackgroundImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    CtaText: Schema.Attribute.String;
+    CtaUrl: Schema.Attribute.String;
+    OverlayColor: Schema.Attribute.String;
+    SubTitle: Schema.Attribute.String;
+    TextColor: Schema.Attribute.String;
+    Title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -21,6 +57,23 @@ export interface SharedMenuItem extends Struct.ComponentSchema {
     Order: Schema.Attribute.Integer;
     SubMenuItems: Schema.Attribute.Component<'shared.sub-menu-item', true>;
     URL: Schema.Attribute.Text;
+  };
+}
+
+export interface SharedPromoBanner extends Struct.ComponentSchema {
+  collectionName: 'components_shared_promo_banners';
+  info: {
+    displayName: 'promoBanner';
+  };
+  attributes: {
+    BackgroundColor: Schema.Attribute.String;
+    Description: Schema.Attribute.Text;
+    DiscountLabel: Schema.Attribute.String;
+    ProductImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    ProductLink: Schema.Attribute.String;
+    Title: Schema.Attribute.String;
   };
 }
 
@@ -86,16 +139,33 @@ export interface SharedSubMenuItem extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedVideoModule extends Struct.ComponentSchema {
+  collectionName: 'components_shared_video_modules';
+  info: {
+    displayName: 'videoModule';
+  };
+  attributes: {
+    Caption: Schema.Attribute.String;
+    CtaUrl: Schema.Attribute.String;
+    OverlayText: Schema.Attribute.String;
+    Video: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'shared.event-banner': SharedEventBanner;
+      'shared.hero-banner': SharedHeroBanner;
       'shared.media': SharedMedia;
       'shared.menu-item': SharedMenuItem;
+      'shared.promo-banner': SharedPromoBanner;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
       'shared.sub-menu-item': SharedSubMenuItem;
+      'shared.video-module': SharedVideoModule;
     }
   }
 }

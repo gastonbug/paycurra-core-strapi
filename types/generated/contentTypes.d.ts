@@ -570,6 +570,44 @@ export interface ApiPycMenuBarPycMenuBar extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiVisualMerchandisingLayoutVisualMerchandisingLayout
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'visual_merchandising_layouts';
+  info: {
+    displayName: 'VisualMerchandisingLayout';
+    pluralName: 'visual-merchandising-layouts';
+    singularName: 'visual-merchandising-layout';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    CustomerUniqueReferenceNumber: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::visual-merchandising-layout.visual-merchandising-layout'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    Sections: Schema.Attribute.DynamicZone<
+      [
+        'shared.hero-banner',
+        'shared.event-banner',
+        'shared.promo-banner',
+        'shared.video-module',
+      ]
+    >;
+    Title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1085,6 +1123,7 @@ declare module '@strapi/strapi' {
       'api::category.category': ApiCategoryCategory;
       'api::global.global': ApiGlobalGlobal;
       'api::pyc-menu-bar.pyc-menu-bar': ApiPycMenuBarPycMenuBar;
+      'api::visual-merchandising-layout.visual-merchandising-layout': ApiVisualMerchandisingLayoutVisualMerchandisingLayout;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
