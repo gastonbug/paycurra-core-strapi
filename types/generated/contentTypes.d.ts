@@ -601,6 +601,8 @@ export interface ApiVisualMerchandisingLayoutVisualMerchandisingLayout
         'shared.video-module',
       ]
     >;
+    ShowFollowStoreButton: Schema.Attribute.Boolean;
+    ShowShareButton: Schema.Attribute.Boolean;
     Title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

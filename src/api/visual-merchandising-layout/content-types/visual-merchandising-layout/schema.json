@@ -17,6 +17,12 @@
     "Title": {
       "type": "string"
     },
+    "ShowShareButton": {
+      "type": "boolean"
+    },
+    "ShowFollowStoreButton": {
+      "type": "boolean"
+    },
     "Sections": {
       "type": "dynamiczone",
       "components": [
