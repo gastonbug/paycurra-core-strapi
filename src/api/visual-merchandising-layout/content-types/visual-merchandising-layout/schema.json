@@ -17,10 +17,10 @@
     "Title": {
       "type": "string"
     },
-    "showShareButton": {
+    "ShowShareButton": {
       "type": "boolean"
     },
-    "showFollowStoreButton": {
+    "ShowFollowStoreButton": {
       "type": "boolean"
     },
     "Sections": {
