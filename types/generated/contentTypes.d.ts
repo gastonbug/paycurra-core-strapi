@@ -554,6 +554,8 @@ export interface ApiPycMenuBarPycMenuBar extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     CustomerUniqueReferenceNumber: Schema.Attribute.UID;
+    IsEnabled: Schema.Attribute.Boolean;
+    IsLive: Schema.Attribute.Boolean;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -586,6 +588,8 @@ export interface ApiVisualMerchandisingLayoutVisualMerchandisingLayout
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     CustomerUniqueReferenceNumber: Schema.Attribute.String;
+    IsEnabled: Schema.Attribute.Boolean;
+    IsLive: Schema.Attribute.Boolean;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
