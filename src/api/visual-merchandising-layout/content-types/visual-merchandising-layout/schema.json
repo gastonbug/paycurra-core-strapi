@@ -31,6 +31,12 @@
         "shared.promo-banner",
         "shared.video-module"
       ]
+    },
+    "IsEnabled": {
+      "type": "boolean"
+    },
+    "IsLive": {
+      "type": "boolean"
     }
   }
 }
