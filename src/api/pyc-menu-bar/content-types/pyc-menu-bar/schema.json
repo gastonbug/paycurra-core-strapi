@@ -34,6 +34,12 @@
       "type": "component",
       "component": "shared.menu-item",
       "repeatable": true
+    },
+    "IsEnabled": {
+      "type": "boolean"
+    },
+    "IsLive": {
+      "type": "boolean"
     }
   }
 }
