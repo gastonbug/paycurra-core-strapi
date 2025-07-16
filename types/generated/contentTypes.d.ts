@@ -572,6 +572,50 @@ export interface ApiPycMenuBarPycMenuBar extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiSpecialOfferSpecialOffer
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'special_offers';
+  info: {
+    displayName: 'SpecialOffer';
+    pluralName: 'special-offers';
+    singularName: 'special-offer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    BackgroundColor: Schema.Attribute.String;
+    BackgroundImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    CustomerUniqueReferenceNumber: Schema.Attribute.String;
+    IsEnabled: Schema.Attribute.Boolean;
+    IsLive: Schema.Attribute.Boolean;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::special-offer.special-offer'
+    > &
+      Schema.Attribute.Private;
+    MerchantUniqueReferenceNumber: Schema.Attribute.String;
+    OfferCategory: Schema.Attribute.Component<
+      'offer-category.offer-category',
+      true
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    SectionImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    SectionTitle: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiVisualMerchandisingLayoutVisualMerchandisingLayout
   extends Struct.CollectionTypeSchema {
   collectionName: 'visual_merchandising_layouts';
@@ -1129,6 +1173,7 @@ declare module '@strapi/strapi' {
       'api::category.category': ApiCategoryCategory;
       'api::global.global': ApiGlobalGlobal;
       'api::pyc-menu-bar.pyc-menu-bar': ApiPycMenuBarPycMenuBar;
+      'api::special-offer.special-offer': ApiSpecialOfferSpecialOffer;
       'api::visual-merchandising-layout.visual-merchandising-layout': ApiVisualMerchandisingLayoutVisualMerchandisingLayout;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
