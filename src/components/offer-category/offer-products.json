@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_offer_category_offer_products",
+  "info": {
+    "displayName": "OfferProducts"
+  },
+  "options": {},
+  "attributes": {
+    "ProductImageUrl": {
+      "type": "string"
+    },
+    "ProductName": {
+      "type": "string"
+    },
+    "ProductUniqueReferenceNumber": {
+      "type": "string"
+    },
+    "Sku": {
+      "type": "string"
+    },
+    "Price": {
+      "type": "decimal"
+    },
+    "Color": {
+      "type": "string"
+    },
+    "Fabric": {
+      "type": "string"
+    },
+    "Size": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
