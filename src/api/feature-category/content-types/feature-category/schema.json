@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "feature_categories",
+  "info": {
+    "singularName": "feature-category",
+    "pluralName": "feature-categories",
+    "displayName": "FeatureCategory"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "FeaturedCategories": {
+      "type": "component",
+      "component": "featured-categories.featured-categories",
+      "repeatable": true
+    }
+  }
+}
