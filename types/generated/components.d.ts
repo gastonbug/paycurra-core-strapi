@@ -1,5 +1,20 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface FeaturedCategoriesFeaturedCategories
+  extends Struct.ComponentSchema {
+  collectionName: 'components_featured_categories_featured_categories';
+  info: {
+    displayName: 'FeaturedCategories';
+  };
+  attributes: {
+    categoryImageId: Schema.Attribute.String;
+    CategoryImageUrl: Schema.Attribute.String;
+    CategoryName: Schema.Attribute.String;
+    CategoryUniqueReferenceNumber: Schema.Attribute.String;
+    CustomerUniqueReferenceNumber: Schema.Attribute.String;
+  };
+}
+
 export interface OfferCategoryOfferCategory extends Struct.ComponentSchema {
   collectionName: 'components_offer_category_offer_categories';
   info: {
@@ -192,6 +207,7 @@ export interface SharedVideoModule extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'featured-categories.featured-categories': FeaturedCategoriesFeaturedCategories;
       'offer-category.offer-category': OfferCategoryOfferCategory;
       'offer-category.offer-products': OfferCategoryOfferProducts;
       'shared.event-banner': SharedEventBanner;

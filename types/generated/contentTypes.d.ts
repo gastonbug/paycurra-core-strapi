@@ -506,6 +506,38 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiFeatureCategoryFeatureCategory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'feature_categories';
+  info: {
+    displayName: 'FeatureCategory';
+    pluralName: 'feature-categories';
+    singularName: 'feature-category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    FeaturedCategories: Schema.Attribute.Component<
+      'featured-categories.featured-categories',
+      true
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::feature-category.feature-category'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
@@ -1171,6 +1203,7 @@ declare module '@strapi/strapi' {
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
+      'api::feature-category.feature-category': ApiFeatureCategoryFeatureCategory;
       'api::global.global': ApiGlobalGlobal;
       'api::pyc-menu-bar.pyc-menu-bar': ApiPycMenuBarPycMenuBar;
       'api::special-offer.special-offer': ApiSpecialOfferSpecialOffer;
