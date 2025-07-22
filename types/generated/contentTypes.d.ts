@@ -521,6 +521,7 @@ export interface ApiFeatureCategoryFeatureCategory
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    CustomerUniqueReferenceNumber: Schema.Attribute.String;
     FeaturedCategories: Schema.Attribute.Component<
       'featured-categories.featured-categories',
       true
@@ -532,6 +533,7 @@ export interface ApiFeatureCategoryFeatureCategory
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    SectionName: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
