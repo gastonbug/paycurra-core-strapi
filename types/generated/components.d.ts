@@ -7,11 +7,10 @@ export interface FeaturedCategoriesFeaturedCategories
     displayName: 'FeaturedCategories';
   };
   attributes: {
-    categoryImageId: Schema.Attribute.String;
+    CategoryImageId: Schema.Attribute.String;
     CategoryImageUrl: Schema.Attribute.String;
     CategoryName: Schema.Attribute.String;
     CategoryUniqueReferenceNumber: Schema.Attribute.String;
-    CustomerUniqueReferenceNumber: Schema.Attribute.String;
   };
 }
 
