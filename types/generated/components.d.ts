@@ -79,7 +79,7 @@ export interface OfferCategoryOfferProducts extends Struct.ComponentSchema {
       'offer-category.product-images',
       true
     >;
-    Promotion: Schema.Attribute.Component<'offer-category.promotion', true>;
+    Promotion: Schema.Attribute.Component<'offer-category.promotion', false>;
     Returns: Schema.Attribute.Boolean;
     ShippingDetails: Schema.Attribute.String;
     Size: Schema.Attribute.String;
@@ -89,7 +89,7 @@ export interface OfferCategoryOfferProducts extends Struct.ComponentSchema {
     UniqueReferenceNumber: Schema.Attribute.String;
     VariantPromotion: Schema.Attribute.Component<
       'offer-category.variant-promotion',
-      true
+      false
     >;
     VariantUniqueReferenceNumber: Schema.Attribute.String;
   };
