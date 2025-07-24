@@ -586,6 +586,8 @@ export interface ApiPycMenuBarPycMenuBar extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    ApprovalStatus: Schema.Attribute.String;
+    ApprovalStatusDate: Schema.Attribute.DateTime;
     BackgroundColor: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -603,6 +605,7 @@ export interface ApiPycMenuBarPycMenuBar extends Struct.CollectionTypeSchema {
     MenuItems: Schema.Attribute.Component<'shared.menu-item', true>;
     publishedAt: Schema.Attribute.DateTime;
     ShowSearchBar: Schema.Attribute.Boolean;
+    StoreName: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
