@@ -73,12 +73,12 @@
     "Promotion": {
       "type": "component",
       "component": "offer-category.promotion",
-      "repeatable": true
+      "repeatable": false
     },
     "VariantPromotion": {
       "type": "component",
       "component": "offer-category.variant-promotion",
-      "repeatable": true
+      "repeatable": false
     },
     "LoyaltyPromotion": {
       "type": "component",
