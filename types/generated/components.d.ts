@@ -1,5 +1,56 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface FeaturedCategoriesFeaturedCategories
+  extends Struct.ComponentSchema {
+  collectionName: 'components_featured_categories_featured_categories';
+  info: {
+    displayName: 'FeaturedCategories';
+  };
+  attributes: {
+    CategoryImageId: Schema.Attribute.String;
+    CategoryImageUrl: Schema.Attribute.String;
+    CategoryName: Schema.Attribute.String;
+    CategoryUniqueReferenceNumber: Schema.Attribute.String;
+  };
+}
+
+export interface OfferCategoryOfferCategory extends Struct.ComponentSchema {
+  collectionName: 'components_offer_category_offer_categories';
+  info: {
+    displayName: 'OfferCategory';
+  };
+  attributes: {
+    CampaignName: Schema.Attribute.String;
+    CampaignUniqueReferenceNumber: Schema.Attribute.String;
+    CategoryName: Schema.Attribute.String;
+    OfferProducts: Schema.Attribute.Component<
+      'offer-category.offer-products',
+      true
+    >;
+    OfferTitle: Schema.Attribute.String;
+    PromotionName: Schema.Attribute.String;
+    PromotionType: Schema.Attribute.String;
+    PromotionUniqueReferenceNumber: Schema.Attribute.String;
+  };
+}
+
+export interface OfferCategoryOfferProducts extends Struct.ComponentSchema {
+  collectionName: 'components_offer_category_offer_products';
+  info: {
+    displayName: 'OfferProducts';
+  };
+  attributes: {
+    Color: Schema.Attribute.String;
+    Fabric: Schema.Attribute.String;
+    Price: Schema.Attribute.Decimal;
+    ProductImageUrl: Schema.Attribute.String;
+    ProductName: Schema.Attribute.String;
+    ProductUniqueReferenceNumber: Schema.Attribute.String;
+    Size: Schema.Attribute.String;
+    Sku: Schema.Attribute.String;
+  };
+}
+
 export interface SharedEventBanner extends Struct.ComponentSchema {
   collectionName: 'components_shared_event_banners';
   info: {
@@ -155,6 +206,9 @@ export interface SharedVideoModule extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'featured-categories.featured-categories': FeaturedCategoriesFeaturedCategories;
+      'offer-category.offer-category': OfferCategoryOfferCategory;
+      'offer-category.offer-products': OfferCategoryOfferProducts;
       'shared.event-banner': SharedEventBanner;
       'shared.hero-banner': SharedHeroBanner;
       'shared.media': SharedMedia;

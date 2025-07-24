@@ -17,6 +17,12 @@
     "Title": {
       "type": "string"
     },
+    "ShowShareButton": {
+      "type": "boolean"
+    },
+    "ShowFollowStoreButton": {
+      "type": "boolean"
+    },
     "Sections": {
       "type": "dynamiczone",
       "components": [
@@ -25,6 +31,12 @@
         "shared.promo-banner",
         "shared.video-module"
       ]
+    },
+    "IsEnabled": {
+      "type": "boolean"
+    },
+    "IsLive": {
+      "type": "boolean"
     }
   }
 }

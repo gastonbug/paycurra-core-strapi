@@ -506,6 +506,40 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiFeatureCategoryFeatureCategory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'feature_categories';
+  info: {
+    displayName: 'FeatureCategory';
+    pluralName: 'feature-categories';
+    singularName: 'feature-category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    CustomerUniqueReferenceNumber: Schema.Attribute.String;
+    FeaturedCategories: Schema.Attribute.Component<
+      'featured-categories.featured-categories',
+      true
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::feature-category.feature-category'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    SectionName: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
@@ -556,6 +590,8 @@ export interface ApiPycMenuBarPycMenuBar extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     CustomerUniqueReferenceNumber: Schema.Attribute.UID;
+    IsEnabled: Schema.Attribute.Boolean;
+    IsLive: Schema.Attribute.Boolean;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -567,6 +603,50 @@ export interface ApiPycMenuBarPycMenuBar extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     ShowSearchBar: Schema.Attribute.Boolean;
     StoreName: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSpecialOfferSpecialOffer
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'special_offers';
+  info: {
+    displayName: 'SpecialOffer';
+    pluralName: 'special-offers';
+    singularName: 'special-offer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    BackgroundColor: Schema.Attribute.String;
+    BackgroundImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    CustomerUniqueReferenceNumber: Schema.Attribute.String;
+    IsEnabled: Schema.Attribute.Boolean;
+    IsLive: Schema.Attribute.Boolean;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::special-offer.special-offer'
+    > &
+      Schema.Attribute.Private;
+    MerchantUniqueReferenceNumber: Schema.Attribute.String;
+    OfferCategory: Schema.Attribute.Component<
+      'offer-category.offer-category',
+      true
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    SectionImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    SectionTitle: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -589,6 +669,8 @@ export interface ApiVisualMerchandisingLayoutVisualMerchandisingLayout
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     CustomerUniqueReferenceNumber: Schema.Attribute.String;
+    IsEnabled: Schema.Attribute.Boolean;
+    IsLive: Schema.Attribute.Boolean;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -604,6 +686,8 @@ export interface ApiVisualMerchandisingLayoutVisualMerchandisingLayout
         'shared.video-module',
       ]
     >;
+    ShowFollowStoreButton: Schema.Attribute.Boolean;
+    ShowShareButton: Schema.Attribute.Boolean;
     Title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1124,8 +1208,10 @@ declare module '@strapi/strapi' {
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
+      'api::feature-category.feature-category': ApiFeatureCategoryFeatureCategory;
       'api::global.global': ApiGlobalGlobal;
       'api::pyc-menu-bar.pyc-menu-bar': ApiPycMenuBarPycMenuBar;
+      'api::special-offer.special-offer': ApiSpecialOfferSpecialOffer;
       'api::visual-merchandising-layout.visual-merchandising-layout': ApiVisualMerchandisingLayoutVisualMerchandisingLayout;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
