@@ -21,6 +21,15 @@
     },
     "SectionName": {
       "type": "string"
+    },
+    "ApprovalStatus": {
+      "type": "enumeration",
+      "enum": [
+        "None",
+        "Requested",
+        "Accepted",
+        "Rejected"
+      ]
     }
   }
 }
