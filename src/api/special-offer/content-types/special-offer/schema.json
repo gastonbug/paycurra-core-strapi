@@ -53,6 +53,12 @@
     },
     "IsEnabled": {
       "type": "boolean"
+    },
+    "State": {
+      "type": "string"
+    },
+    "MerchantName": {
+      "type": "string"
     }
   }
 }
