@@ -518,6 +518,9 @@ export interface ApiFeatureCategoryFeatureCategory
     draftAndPublish: true;
   };
   attributes: {
+    ApprovalStatus: Schema.Attribute.Enumeration<
+      ['None', 'Requested', 'Accepted', 'Rejected']
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
