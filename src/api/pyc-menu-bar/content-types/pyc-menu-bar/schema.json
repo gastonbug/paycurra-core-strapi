@@ -40,6 +40,15 @@
     },
     "IsLive": {
       "type": "boolean"
+    },
+    "ApprovalStatusDate": {
+      "type": "datetime"
+    },
+    "ApprovalStatus": {
+      "type": "string"
+    },
+    "StoreName": {
+      "type": "string"
     }
   }
 }
