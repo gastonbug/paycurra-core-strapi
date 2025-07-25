@@ -37,6 +37,12 @@
     },
     "IsLive": {
       "type": "boolean"
+    },
+    "ApprovalStatus": {
+      "type": "string"
+    },
+    "ApprovalStatusDate": {
+      "type": "datetime"
     }
   }
 }
