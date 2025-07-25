@@ -518,6 +518,9 @@ export interface ApiFeatureCategoryFeatureCategory
     draftAndPublish: true;
   };
   attributes: {
+    ApprovalStatus: Schema.Attribute.Enumeration<
+      ['None', 'Requested', 'Accepted', 'Rejected']
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -637,6 +640,7 @@ export interface ApiSpecialOfferSpecialOffer
       'api::special-offer.special-offer'
     > &
       Schema.Attribute.Private;
+    MerchantName: Schema.Attribute.String;
     MerchantUniqueReferenceNumber: Schema.Attribute.String;
     OfferCategory: Schema.Attribute.Component<
       'offer-category.offer-category',
@@ -647,6 +651,7 @@ export interface ApiSpecialOfferSpecialOffer
       'images' | 'files' | 'videos' | 'audios'
     >;
     SectionTitle: Schema.Attribute.String;
+    State: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

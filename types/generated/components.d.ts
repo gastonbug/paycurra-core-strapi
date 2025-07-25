@@ -14,6 +14,25 @@ export interface FeaturedCategoriesFeaturedCategories
   };
 }
 
+export interface OfferCategoryLoyaltyPromotion extends Struct.ComponentSchema {
+  collectionName: 'components_offer_category_loyalty_promotions';
+  info: {
+    displayName: 'LoyaltyPromotion';
+  };
+  attributes: {
+    LoyaltyProgrammeUniqueReferenceNumber: Schema.Attribute.String;
+    LoyaltyTierName: Schema.Attribute.String;
+    LoyaltyTierReferenceNumber: Schema.Attribute.String;
+    MerchantUniqueReferenceNumber: Schema.Attribute.String;
+    MinimumPayout: Schema.Attribute.Decimal;
+    PointsToNextTier: Schema.Attribute.Decimal;
+    PointsToValue: Schema.Attribute.Decimal;
+    RewardEffect: Schema.Attribute.String;
+    RewardEffectValue: Schema.Attribute.String;
+    RewardEffectValueLimit: Schema.Attribute.String;
+  };
+}
+
 export interface OfferCategoryOfferCategory extends Struct.ComponentSchema {
   collectionName: 'components_offer_category_offer_categories';
   info: {
@@ -40,14 +59,83 @@ export interface OfferCategoryOfferProducts extends Struct.ComponentSchema {
     displayName: 'OfferProducts';
   };
   attributes: {
+    Accessories: Schema.Attribute.String;
+    CategoryName: Schema.Attribute.String;
+    CategoryUniqueReferenceNumber: Schema.Attribute.String;
     Color: Schema.Attribute.String;
+    CustomerUniqueReferenceNumber: Schema.Attribute.String;
+    Description: Schema.Attribute.String;
     Fabric: Schema.Attribute.String;
+    LoyaltyPromotion: Schema.Attribute.Component<
+      'offer-category.loyalty-promotion',
+      true
+    >;
+    Name: Schema.Attribute.String;
+    OnlineConsultationRequired: Schema.Attribute.Boolean;
+    OwnerUniqueReferenceNumber: Schema.Attribute.String;
     Price: Schema.Attribute.Decimal;
-    ProductImageUrl: Schema.Attribute.String;
-    ProductName: Schema.Attribute.String;
-    ProductUniqueReferenceNumber: Schema.Attribute.String;
+    ProductCatalogueUniquReferenceNumber: Schema.Attribute.String;
+    ProductImages: Schema.Attribute.Component<
+      'offer-category.product-images',
+      true
+    >;
+    Promotion: Schema.Attribute.Component<'offer-category.promotion', false>;
+    Returns: Schema.Attribute.Boolean;
+    ShippingDetails: Schema.Attribute.String;
     Size: Schema.Attribute.String;
     Sku: Schema.Attribute.String;
+    StockLevel: Schema.Attribute.String;
+    StockQuantity: Schema.Attribute.Integer;
+    UniqueReferenceNumber: Schema.Attribute.String;
+    VariantPromotion: Schema.Attribute.Component<
+      'offer-category.variant-promotion',
+      false
+    >;
+    VariantUniqueReferenceNumber: Schema.Attribute.String;
+  };
+}
+
+export interface OfferCategoryProductImages extends Struct.ComponentSchema {
+  collectionName: 'components_offer_category_product_images';
+  info: {
+    displayName: 'ProductImages';
+    icon: 'shield';
+  };
+  attributes: {
+    DocumentAbsoluteUri: Schema.Attribute.String;
+    DocumentVersion: Schema.Attribute.String;
+    ImageType: Schema.Attribute.String;
+    UniqueReferenceNumber: Schema.Attribute.String;
+  };
+}
+
+export interface OfferCategoryPromotion extends Struct.ComponentSchema {
+  collectionName: 'components_offer_category_promotions';
+  info: {
+    displayName: 'Promotion';
+  };
+  attributes: {
+    MerchantUniqueReferenceNumber: Schema.Attribute.String;
+    ProductCatalogueUniqueReferenceNumber: Schema.Attribute.String;
+    PromotionEffect: Schema.Attribute.String;
+    PromotionEffectValue: Schema.Attribute.String;
+    PromotionEffectValueLimit: Schema.Attribute.String;
+    PromotionUniqueReferenceNumber: Schema.Attribute.String;
+  };
+}
+
+export interface OfferCategoryVariantPromotion extends Struct.ComponentSchema {
+  collectionName: 'components_offer_category_variant_promotions';
+  info: {
+    displayName: 'VariantPromotion';
+  };
+  attributes: {
+    MerchantUniqueReferenceNumber: Schema.Attribute.String;
+    ProductCatalogueItemUniqueReferenceNumber: Schema.Attribute.String;
+    PromotionEffect: Schema.Attribute.String;
+    PromotionEffectValue: Schema.Attribute.String;
+    PromotionEffectValueLimit: Schema.Attribute.String;
+    PromotionUniqueReferenceNumber: Schema.Attribute.String;
   };
 }
 
@@ -207,8 +295,12 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'featured-categories.featured-categories': FeaturedCategoriesFeaturedCategories;
+      'offer-category.loyalty-promotion': OfferCategoryLoyaltyPromotion;
       'offer-category.offer-category': OfferCategoryOfferCategory;
       'offer-category.offer-products': OfferCategoryOfferProducts;
+      'offer-category.product-images': OfferCategoryProductImages;
+      'offer-category.promotion': OfferCategoryPromotion;
+      'offer-category.variant-promotion': OfferCategoryVariantPromotion;
       'shared.event-banner': SharedEventBanner;
       'shared.hero-banner': SharedHeroBanner;
       'shared.media': SharedMedia;
