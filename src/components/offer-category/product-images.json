@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_offer_category_product_images",
+  "info": {
+    "displayName": "ProductImages",
+    "icon": "shield"
+  },
+  "options": {},
+  "attributes": {
+    "ImageType": {
+      "type": "string"
+    },
+    "UniqueReferenceNumber": {
+      "type": "string"
+    },
+    "DocumentVersion": {
+      "type": "string"
+    },
+    "DocumentAbsoluteUri": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

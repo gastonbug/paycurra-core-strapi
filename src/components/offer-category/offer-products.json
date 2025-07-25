@@ -1,0 +1,90 @@
+{
+  "collectionName": "components_offer_category_offer_products",
+  "info": {
+    "displayName": "OfferProducts"
+  },
+  "options": {},
+  "attributes": {
+    "Sku": {
+      "type": "string"
+    },
+    "Price": {
+      "type": "decimal"
+    },
+    "Color": {
+      "type": "string"
+    },
+    "Fabric": {
+      "type": "string"
+    },
+    "Size": {
+      "type": "string"
+    },
+    "UniqueReferenceNumber": {
+      "type": "string"
+    },
+    "CustomerUniqueReferenceNumber": {
+      "type": "string"
+    },
+    "OwnerUniqueReferenceNumber": {
+      "type": "string"
+    },
+    "CategoryUniqueReferenceNumber": {
+      "type": "string"
+    },
+    "ProductCatalogueUniquReferenceNumber": {
+      "type": "string"
+    },
+    "VariantUniqueReferenceNumber": {
+      "type": "string"
+    },
+    "CategoryName": {
+      "type": "string"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "string"
+    },
+    "StockLevel": {
+      "type": "string"
+    },
+    "StockQuantity": {
+      "type": "integer"
+    },
+    "ShippingDetails": {
+      "type": "string"
+    },
+    "Returns": {
+      "type": "boolean"
+    },
+    "OnlineConsultationRequired": {
+      "type": "boolean"
+    },
+    "ProductImages": {
+      "type": "component",
+      "component": "offer-category.product-images",
+      "repeatable": true
+    },
+    "Accessories": {
+      "type": "string"
+    },
+    "Promotion": {
+      "type": "component",
+      "component": "offer-category.promotion",
+      "repeatable": false
+    },
+    "VariantPromotion": {
+      "type": "component",
+      "component": "offer-category.variant-promotion",
+      "repeatable": false
+    },
+    "LoyaltyPromotion": {
+      "type": "component",
+      "component": "offer-category.loyalty-promotion",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

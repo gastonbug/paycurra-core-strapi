@@ -1,0 +1,64 @@
+{
+  "kind": "collectionType",
+  "collectionName": "special_offers",
+  "info": {
+    "singularName": "special-offer",
+    "pluralName": "special-offers",
+    "displayName": "SpecialOffer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "SectionTitle": {
+      "type": "string"
+    },
+    "MerchantUniqueReferenceNumber": {
+      "type": "string"
+    },
+    "CustomerUniqueReferenceNumber": {
+      "type": "string"
+    },
+    "SectionImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "BackgroundColor": {
+      "type": "string"
+    },
+    "BackgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "OfferCategory": {
+      "type": "component",
+      "component": "offer-category.offer-category",
+      "repeatable": true
+    },
+    "IsLive": {
+      "type": "boolean"
+    },
+    "IsEnabled": {
+      "type": "boolean"
+    },
+    "State": {
+      "type": "string"
+    },
+    "MerchantName": {
+      "type": "string"
+    }
+  }
+}

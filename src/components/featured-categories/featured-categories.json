@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_featured_categories_featured_categories",
+  "info": {
+    "displayName": "FeaturedCategories"
+  },
+  "options": {},
+  "attributes": {
+    "CategoryName": {
+      "type": "string"
+    },
+    "CategoryUniqueReferenceNumber": {
+      "type": "string"
+    },
+    "CategoryImageUrl": {
+      "type": "string"
+    },
+    "CategoryImageId": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

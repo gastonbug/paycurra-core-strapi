@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "visual_merchandising_layouts",
+  "info": {
+    "singularName": "visual-merchandising-layout",
+    "pluralName": "visual-merchandising-layouts",
+    "displayName": "VisualMerchandisingLayout"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "CustomerUniqueReferenceNumber": {
+      "type": "string"
+    },
+    "Title": {
+      "type": "string"
+    },
+    "ShowShareButton": {
+      "type": "boolean"
+    },
+    "ShowFollowStoreButton": {
+      "type": "boolean"
+    },
+    "Sections": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.hero-banner",
+        "shared.event-banner",
+        "shared.promo-banner",
+        "shared.video-module"
+      ]
+    },
+    "IsEnabled": {
+      "type": "boolean"
+    },
+    "IsLive": {
+      "type": "boolean"
+    }
+  }
+}
