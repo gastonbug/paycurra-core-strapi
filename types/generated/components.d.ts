@@ -68,7 +68,7 @@ export interface OfferCategoryOfferProducts extends Struct.ComponentSchema {
     Fabric: Schema.Attribute.String;
     LoyaltyPromotion: Schema.Attribute.Component<
       'offer-category.loyalty-promotion',
-      true
+      false
     >;
     Name: Schema.Attribute.String;
     OnlineConsultationRequired: Schema.Attribute.Boolean;
