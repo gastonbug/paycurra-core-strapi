@@ -673,6 +673,8 @@ export interface ApiVisualMerchandisingLayoutVisualMerchandisingLayout
     draftAndPublish: true;
   };
   attributes: {
+    ApprovalStatus: Schema.Attribute.String;
+    ApprovalStatusDate: Schema.Attribute.DateTime;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
