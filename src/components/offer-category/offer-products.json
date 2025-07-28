@@ -83,7 +83,7 @@
     "LoyaltyPromotion": {
       "type": "component",
       "component": "offer-category.loyalty-promotion",
-      "repeatable": true
+      "repeatable": false
     }
   },
   "config": {}
