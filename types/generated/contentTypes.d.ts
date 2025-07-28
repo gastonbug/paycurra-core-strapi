@@ -624,6 +624,9 @@ export interface ApiSpecialOfferSpecialOffer
     draftAndPublish: true;
   };
   attributes: {
+    ApprovalStatus: Schema.Attribute.Enumeration<
+      ['None', 'Requested', 'Accepted', 'Rejected']
+    >;
     BackgroundColor: Schema.Attribute.String;
     BackgroundImage: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
