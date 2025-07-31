@@ -27,7 +27,7 @@
       "enum": [
         "None",
         "Requested",
-        "Accepted",
+        "Approved",
         "Rejected"
       ]
     }

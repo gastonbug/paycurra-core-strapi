@@ -20,28 +20,8 @@
     "CustomerUniqueReferenceNumber": {
       "type": "string"
     },
-    "SectionImage": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "BackgroundColor": {
       "type": "string"
-    },
-    "BackgroundImage": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
     },
     "OfferCategory": {
       "type": "component",
@@ -65,8 +45,28 @@
       "enum": [
         "None",
         "Requested",
-        "Accepted",
+        "Approved",
         "Rejected"
+      ]
+    },
+    "SectionImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "BackgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
       ]
     }
   }

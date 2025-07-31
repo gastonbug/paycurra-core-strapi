@@ -26,10 +26,8 @@
     "PromotionUniqueReferenceNumber": {
       "type": "string"
     },
-    "OfferProducts": {
-      "type": "component",
-      "component": "offer-category.offer-products",
-      "repeatable": true
+    "CategoryUniqueReferenceNumber": {
+      "type": "string"
     }
   },
   "config": {}

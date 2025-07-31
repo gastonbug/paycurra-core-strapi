@@ -519,7 +519,7 @@ export interface ApiFeatureCategoryFeatureCategory
   };
   attributes: {
     ApprovalStatus: Schema.Attribute.Enumeration<
-      ['None', 'Requested', 'Accepted', 'Rejected']
+      ['None', 'Requested', 'Approved', 'Rejected']
     >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -625,7 +625,7 @@ export interface ApiSpecialOfferSpecialOffer
   };
   attributes: {
     ApprovalStatus: Schema.Attribute.Enumeration<
-      ['None', 'Requested', 'Accepted', 'Rejected']
+      ['None', 'Requested', 'Approved', 'Rejected']
     >;
     BackgroundColor: Schema.Attribute.String;
     BackgroundImage: Schema.Attribute.Media<
