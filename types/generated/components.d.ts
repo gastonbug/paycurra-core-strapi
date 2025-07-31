@@ -42,10 +42,6 @@ export interface OfferCategoryOfferCategory extends Struct.ComponentSchema {
     CampaignName: Schema.Attribute.String;
     CampaignUniqueReferenceNumber: Schema.Attribute.String;
     CategoryName: Schema.Attribute.String;
-    OfferProducts: Schema.Attribute.Component<
-      'offer-category.offer-products',
-      true
-    >;
     OfferTitle: Schema.Attribute.String;
     PromotionName: Schema.Attribute.String;
     PromotionType: Schema.Attribute.String;
