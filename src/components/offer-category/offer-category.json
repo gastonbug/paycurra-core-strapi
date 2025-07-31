@@ -25,6 +25,9 @@
     },
     "PromotionUniqueReferenceNumber": {
       "type": "string"
+    },
+    "CategoryUniqueReferenceNumber": {
+      "type": "string"
     }
   },
   "config": {}
