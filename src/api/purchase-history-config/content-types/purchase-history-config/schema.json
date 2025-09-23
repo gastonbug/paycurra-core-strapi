@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "purchase_history_configs",
+  "info": {
+    "singularName": "purchase-history-config",
+    "pluralName": "purchase-history-configs",
+    "displayName": "PurchaseHistoryConfig"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "MerchantUniqueReferenceNumber": {
+      "type": "string"
+    },
+    "CustomerUniqueReferenceNumber": {
+      "type": "string"
+    },
+    "ShowPastPurchases": {
+      "type": "boolean"
+    },
+    "ShowRepeatedItems": {
+      "type": "boolean"
+    },
+    "ShowSavedItems": {
+      "type": "boolean"
+    }
+  }
+}

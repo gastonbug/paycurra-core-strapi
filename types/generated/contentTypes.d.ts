@@ -575,6 +575,39 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiPurchaseHistoryConfigPurchaseHistoryConfig
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'purchase_history_configs';
+  info: {
+    displayName: 'PurchaseHistoryConfig';
+    pluralName: 'purchase-history-configs';
+    singularName: 'purchase-history-config';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    CustomerUniqueReferenceNumber: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::purchase-history-config.purchase-history-config'
+    > &
+      Schema.Attribute.Private;
+    MerchantUniqueReferenceNumber: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    ShowPastPurchases: Schema.Attribute.Boolean;
+    ShowRepeatedItems: Schema.Attribute.Boolean;
+    ShowSavedItems: Schema.Attribute.Boolean;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPycMenuBarPycMenuBar extends Struct.CollectionTypeSchema {
   collectionName: 'pyc_menu_bars';
   info: {
@@ -1220,6 +1253,7 @@ declare module '@strapi/strapi' {
       'api::category.category': ApiCategoryCategory;
       'api::feature-category.feature-category': ApiFeatureCategoryFeatureCategory;
       'api::global.global': ApiGlobalGlobal;
+      'api::purchase-history-config.purchase-history-config': ApiPurchaseHistoryConfigPurchaseHistoryConfig;
       'api::pyc-menu-bar.pyc-menu-bar': ApiPycMenuBarPycMenuBar;
       'api::special-offer.special-offer': ApiSpecialOfferSpecialOffer;
       'api::visual-merchandising-layout.visual-merchandising-layout': ApiVisualMerchandisingLayoutVisualMerchandisingLayout;
