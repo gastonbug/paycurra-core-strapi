@@ -12,25 +12,15 @@ module.exports = [
             "'self'",
             "data:",
             "blob:",
-            "dl.airtable.com", // Required for Strapi < 4.10.6, you can remove it otherwise
-            "https://market-assets.strapi.io", // Required for Strapi >= 4.10.6, you can remove it otherwise
-            /**
-             * Note: If using a STORAGE_URL replace
-             * `https://${process.env.STORAGE_ACCOUNT}.blob.core.windows.net` w/ process.env.STORAGE_URL
-             * If using a CDN URL make sure to include that url in the CSP headers process.env.STORAGE_CDN_URL
-             */
+            "dl.airtable.com",
+            "https://market-assets.strapi.io",
             `https://${process.env.STORAGE_ACCOUNT}.blob.core.windows.net`,
           ],
           "media-src": [
             "'self'",
             "data:",
             "blob:",
-            "dl.airtable.com", // Required for Strapi < 4.10.6, you can remove it otherwise
-            /**
-             * Note: If using a STORAGE_URL replace
-             * `https://${process.env.STORAGE_ACCOUNT}.blob.core.windows.net` w/ process.env.STORAGE_URL
-             * If using a CDN URL make sure to include that url in the CSP headers process.env.STORAGE_CDN_URL
-             */
+            "dl.airtable.com",
             `https://${process.env.STORAGE_ACCOUNT}.blob.core.windows.net`,
           ],
           upgradeInsecureRequests: null,
