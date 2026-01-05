@@ -599,6 +599,8 @@ export interface ApiPurchaseHistoryConfigPurchaseHistoryConfig
       Schema.Attribute.Private;
     MerchantUniqueReferenceNumber: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    RebuyStoreTitle: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Rebuy'>;
     ShowPastPurchases: Schema.Attribute.Boolean;
     ShowRepeatedItems: Schema.Attribute.Boolean;
     ShowSavedItems: Schema.Attribute.Boolean;

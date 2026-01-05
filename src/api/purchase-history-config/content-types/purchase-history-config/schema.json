@@ -25,6 +25,10 @@
     },
     "ShowSavedItems": {
       "type": "boolean"
+    },
+    "RebuyStoreTitle": {
+      "type": "string",
+      "default": "Rebuy"
     }
   }
 }
